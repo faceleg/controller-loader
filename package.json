@@ -16,5 +16,11 @@
   "engines": [
     "node"
   ],
+  "dependencies": {
+    "async": "0.2.x"
+  },
+  "devDependencies": {
+    "nodeunit": "0.8.x"
+  },
   "main": "./lib/index.js"
 }
