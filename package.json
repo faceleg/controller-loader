@@ -1,6 +1,6 @@
 {
   "name": "controller-loader",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Recursively load & instantiate all controllers in a given directory.",
   "keywords": [  ],
   "author": "Michael Robinson <mike@pagesofinterest.net>",
