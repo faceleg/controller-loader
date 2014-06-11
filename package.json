@@ -17,7 +17,7 @@
     "node"
   ],
   "dependencies": {
-    "async": "0.2.x"
+    "filewalker": ""
   },
   "devDependencies": {
     "nodeunit": "0.8.x"
