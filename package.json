@@ -1,13 +1,17 @@
 {
   "name": "controller-loader",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Recursively load & instantiate all controllers in a given directory.",
-  "keywords": ["controller", "recursive", "express-controller"],
+  "keywords": [
+    "controller",
+    "recursive",
+    "express-controller"
+  ],
   "author": "Michael Robinson <mike@pagesofinterest.net>",
   "license": "MIT",
   "scripts": {
-      "test-watch": "node_modules/.bin/istanbul cover --include-all-sources --report html node_modules/.bin/_mocha  -- -w --recursive --reporter spec",
-      "test": "node_modules/.bin/istanbul cover --include-all-sources --report text-summary node_modules/.bin/_mocha  -- -w --recursive --reporter spec"
+    "test-watch": "node_modules/.bin/istanbul cover --include-all-sources --report html node_modules/.bin/_mocha  -- -w --recursive --reporter spec",
+    "test": "node_modules/.bin/istanbul cover --include-all-sources --report text-summary node_modules/.bin/_mocha  -- -w --recursive --reporter spec"
   },
   "repository": "git://github.com/faceleg/controller-loader.git",
   "dependencies": {
