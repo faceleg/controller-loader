@@ -1,20 +1,23 @@
-var loader = require('../lib'),
-  path = require('path'),
-  fs = require('fs');
+'use strict';
 
-exports.testLoading = function(test) {
-  test.expect(2);
-  var controllerCount = 0,
-    expectedControllerCount = 2;
+var expect = require('chai').expect;
+var Plan = require('test-plan');
+var loader = require('../lib');
+var path = require('path');
+var fs = require('fs');
 
-  loader.load(path.join(__dirname, 'controllers'), function(controller) {
-    controllerCount++;
+describe('index', function() {
 
-    stats = fs.lstatSync(controller);
-    test.equals(stats.isDirectory(), false, 'Controller should exist and be a file');
-
-    if (expectedControllerCount == controllerCount) {
-      test.done();
-    }
+  it('should callback with valid controller files only', function(done) {
+    var plan = new Plan(2, done);
+    loader.load(path.join(__dirname, 'controllers'), function(controller) {
+      fs.lstat(controller, function(error, stats) {
+        expect(stats.isDirectory()).to.equal(false);
+        plan.ok(true);
+      });
+    }, function(error) {
+      expect(error).to.be.undefined;
+    });
   });
-};
+});
+
